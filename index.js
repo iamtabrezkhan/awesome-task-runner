@@ -72,7 +72,7 @@ class Runner {
    * ```js
    * runner.get('foo')
    * ```
-   * @param {string} `key`
+   * @param {string} key
    * @returns {*}
    */
   get = (key) => {
@@ -110,7 +110,7 @@ class Runner {
    *    done();
    * })
    * ```
-   * @param {string} `taskName` string
+   * @param {string} taskName
    * @param {TaskFn} fn function to invoke when the task runs
    */
   task = (taskName, fn) => {
@@ -141,7 +141,7 @@ class Runner {
    *    if(err) throw err;
    * })
    * ```
-   * @param {String|String[]} `tasks` string or array of strings.
+   * @param {String|String[]} tasks string or array of strings.
    * @param {TasksDoneFn} cb A callback function, will be invoked once the runner has finished all the tasks.
    */
   run = (tasks, cb) => {

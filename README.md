@@ -27,6 +27,10 @@
 npm install awesome-task-runner
 ```
 
+## Docs
+
+Check out the documentation [here](docs/DOCUMENTATION.md)
+
 ## Run tests
 
 ```sh
