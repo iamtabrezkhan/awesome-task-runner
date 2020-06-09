@@ -47,7 +47,7 @@ class Runner {
    * @param {string|object} key
    * @param {*} [value]
    */
-  set = (key, value) => {
+  set(key, value) {
     if (!key) {
       throw new TypeError(`Cannot set value on empty key`);
     }
@@ -64,7 +64,7 @@ class Runner {
       return;
     }
     this.data = { ...this.data, ...key };
-  };
+  }
 
   /**
    * Get value from runner's data object
@@ -75,9 +75,9 @@ class Runner {
    * @param {string} key
    * @returns {*}
    */
-  get = (key) => {
+  get(key) {
     return this.data[key];
-  };
+  }
 
   /**
    * Clear runner's data
@@ -86,9 +86,9 @@ class Runner {
    * runner.clear()
    * ```
    */
-  clear = () => {
+  clear() {
     this.data = {};
-  };
+  }
 
   /**
    * Task Done Function.
@@ -113,7 +113,7 @@ class Runner {
    * @param {string} taskName
    * @param {TaskFn} fn function to invoke when the task runs
    */
-  task = (taskName, fn) => {
+  task(taskName, fn) {
     if (!taskName) {
       throw new Error(`Cannot register empty task name`);
     }
@@ -126,7 +126,7 @@ class Runner {
       throw new Error(`duplicate task name: ${taskName}`);
     }
     this.tasks[taskName] = fn;
-  };
+  }
 
   /**
    * @callback TasksDoneFn
@@ -144,7 +144,7 @@ class Runner {
    * @param {String|String[]} tasks string or array of strings.
    * @param {TasksDoneFn} cb A callback function, will be invoked once the runner has finished all the tasks.
    */
-  run = (tasks, cb) => {
+  run(tasks, cb) {
     if (!tasks) {
       throw new Error(
         `Expected tasks argument to be string or array of strings, received ${utils.getNativeType(
@@ -185,7 +185,7 @@ class Runner {
     }
     cb();
     return;
-  };
+  }
 }
 
 const logStarted = (isSilent, taskName) => {
