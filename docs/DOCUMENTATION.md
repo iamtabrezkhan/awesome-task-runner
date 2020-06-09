@@ -1,4 +1,4 @@
-> awesome-task-runner v0.0.3
+> awesome-task-runner v0.0.4
 
 ### Table of Contents
 
