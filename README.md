@@ -1,6 +1,8 @@
 <h1 align="center">Welcome to awesome-task-runner 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <a href="https://www.npmjs.com/package/awesome-task-runner" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/awesome-task-runner.svg">
+  </a>
   <a href="https://github.com/iamtabrezkhan/awesome-task-runner#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -35,10 +37,10 @@ npm run test
 
 👤 **Tabrez Khan (https://github.com/iamtabrezkhan)**
 
-* Website: https://iamtabrezkhan.github.io
-* Twitter: [@TabrezX](https://twitter.com/TabrezX)
-* Github: [@iamtabrezkhan](https://github.com/iamtabrezkhan)
-* LinkedIn: [@iamtabrezkhan](https://linkedin.com/in/iamtabrezkhan)
+- Website: https://iamtabrezkhan.github.io
+- Twitter: [@TabrezX](https://twitter.com/TabrezX)
+- Github: [@iamtabrezkhan](https://github.com/iamtabrezkhan)
+- LinkedIn: [@iamtabrezkhan](https://linkedin.com/in/iamtabrezkhan)
 
 ## 🤝 Contributing
 
@@ -53,5 +55,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2020 [Tabrez Khan (https://github.com/iamtabrezkhan)](https://github.com/iamtabrezkhan).<br />
 This project is [MIT](https://github.com/iamtabrezkhan/awesome-task-runner/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
