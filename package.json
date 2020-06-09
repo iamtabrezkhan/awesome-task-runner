@@ -1,6 +1,6 @@
 {
   "name": "awesome-task-runner",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Awesome Task Runner",
   "main": "index.js",
   "scripts": {
