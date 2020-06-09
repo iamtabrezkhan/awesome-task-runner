@@ -164,7 +164,7 @@ class Runner {
       if (!taskFn) throw new Error(`task not registered: ${tasks}`);
       logStarted(this.silent, tasks);
       try {
-        taskFn.call(this, () => logFinished(this.silent, task));
+        taskFn.call(this, () => logFinished(this.silent, tasks));
       } catch (error) {
         cb(error);
         return;
