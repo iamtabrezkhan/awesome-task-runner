@@ -39,10 +39,16 @@ class Runner {
   }
 
   /**
-   * Merges the internal `data` object of runner with provided `data` object
+   * Merges the internal `data` object of runner with provided object
+   * or can be used to set key value pairs
    *
    * ```js
    * runner.set({foo: 'bar'})
+   * ```
+   * or
+   *
+   * ```js
+   * runner.set('foo', 'bar')
    * ```
    * @param {string|object} key
    * @param {*} [value]

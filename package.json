@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "gendocs": "documentation build index.js -f md"
+    "gendocs": "rm -f docs/DOCUMENTATION.md && documentation build index.js -f md > docs/DOCUMENTATION.md "
   },
   "repository": {
     "type": "git",
