@@ -207,7 +207,7 @@ const logFinished = (isSilent, taskName) => {
   if (!isSilent) {
     console.log(
       color.greenBright(color.symbols.check),
-      `${color.dim("started:")}${taskName}`
+      `${color.dim("completed:")}${taskName}`
     );
   }
 };
