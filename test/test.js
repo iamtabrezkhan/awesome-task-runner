@@ -135,6 +135,12 @@ describe("runner", function () {
       assert.throws(() => runner.task(null, () => {}));
       assert.throws(() => runner.task(undefined, () => {}));
     });
+    it("should throw if taskFn is not a function", () => {
+      assert.throws(() => runner.task("", 123));
+      assert.throws(() => runner.task(null, "() => {}"));
+      assert.throws(() => runner.task(undefined, {}));
+      assert.throws(() => runner.task(undefined, true));
+    });
   });
   describe("runner.run()", function () {
     const task1Fn = sinon.fake();
@@ -161,6 +167,11 @@ describe("runner", function () {
       assert.throws(() =>
         runner.run(["not:registered", "this:is:also:not:registered"], () => {})
       );
+    });
+    it("should throw if cb is not a function", () => {
+      assert.throws(() => runner.run("task1", "() => {}"));
+      assert.throws(() => runner.run(["task1", "task2"], {}));
+      assert.throws(() => runner.run(["task1", "task2"]));
     });
   });
 });

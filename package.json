@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/iamtabrezkhan/awesome-task-runner#readme",
   "dependencies": {
-    "ansi-colors": "4.1.1"
+    "ansi-colors": "4.1.1",
+    "native-type": "0.0.5"
   },
   "devDependencies": {
     "documentation": "^13.0.1",

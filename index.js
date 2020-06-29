@@ -128,6 +128,9 @@ class Runner {
         `Expected task name to be string, received ${typeof taskName}`
       );
     }
+    if (typeof fn !== "function") {
+      throw new Error(`Expected function, received ${utils.getNativeType(fn)}`);
+    }
     if (this.tasks.hasOwnProperty(taskName)) {
       throw new Error(`duplicate task name: ${taskName}`);
     }
@@ -157,6 +160,9 @@ class Runner {
           tasks
         )}`
       );
+    }
+    if (typeof cb !== "function") {
+      throw new Error(`Expected function, received ${utils.getNativeType(fn)}`);
     }
     if (typeof tasks !== "string" && !Array.isArray(tasks)) {
       throw new Error(
