@@ -19,17 +19,17 @@ class Runner {
    * @param {RunnerOptions} options
    */
   constructor(options = {}) {
-    const { data, silent } = options;
+    const { data = {}, silent = false } = options;
     if (!utils.isObject(options)) {
       throw new Error(
         `Expected object, received ${utils.getNativeType(options)}`
       );
     }
-    if (!(utils.isObject(data) || typeof data === "undefined")) {
+    if (!utils.isObject(data)) {
       throw new Error(`Expected object, received ${utils.getNativeType(data)}`);
     }
-    this.data = data || {};
-    if (!(utils.isBoolean(silent) || typeof silent === "undefined")) {
+    this.data = data;
+    if (!utils.isBoolean(silent)) {
       throw new Error(
         `Expected boolean, received ${utils.getNativeType(silent)}`
       );
@@ -59,7 +59,7 @@ class Runner {
     }
     if (!(typeof key === "string" || utils.isObject(key))) {
       throw new TypeError(
-        `Expect string or object, received ${utils.getNativeType(key)}`
+        `Expected string or object, received ${utils.getNativeType(key)}`
       );
     }
     if (typeof key === "string") {
@@ -69,7 +69,8 @@ class Runner {
       this.data[key] = value;
       return;
     }
-    this.data = { ...this.data, ...key };
+    const newData = key;
+    this.data = { ...this.data, ...newData };
   }
 
   /**
@@ -125,14 +126,16 @@ class Runner {
     }
     if (typeof taskName !== "string") {
       throw new Error(
-        `Expected task name to be string, received ${typeof taskName}`
+        `Expected task name to be string, received ${utils.getNativeType(
+          taskName
+        )}`
       );
     }
     if (typeof fn !== "function") {
       throw new Error(`Expected function, received ${utils.getNativeType(fn)}`);
     }
     if (this.tasks.hasOwnProperty(taskName)) {
-      throw new Error(`duplicate task name: ${taskName}`);
+      throw new Error(`Duplicate task name: ${taskName}`);
     }
     this.tasks[taskName] = fn;
   }
@@ -173,7 +176,7 @@ class Runner {
     }
     if (typeof tasks === "string") {
       const taskFn = this.tasks[tasks];
-      if (!taskFn) throw new Error(`task not registered: ${tasks}`);
+      if (!taskFn) throw new Error(`Task not registered: ${tasks}`);
       logStarted(this.silent, tasks);
       try {
         taskFn.call(this, () => logFinished(this.silent, tasks));
